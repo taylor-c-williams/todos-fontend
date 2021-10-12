@@ -1,25 +1,76 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import {
+    BrowserRouter as Router, 
+    Route, 
+    Switch,
+    NavLink,
+    Redirect
+} from 'react-router-dom';
+import Home from './home.js';
+import LogIn from './logIn.js';
+import SignUp from './signUp.js';
+import ToDo from './toDo.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import './App.css'
+
+const TOKEN_KEY = 'TOKEN'
+
+export default class App extends Component {
+
+  state = {
+    token: localStorage.getItem(TOKEN_KEY) || ''
+  }
+
+  handleTokenChange = token => {
+    localStorage.setItem(TOKEN_KEY, token)
+    this.setState({ token:token })
+  }
+
+  logout = () => {
+    localStorage.clear()
+    this.setState({ token:'' })
+  }
+
+    render() {
+        return (
+            <div>
+                <Router>
+                  <header>
+                  <NavLink exact activeClassName="active" to='/'>Home</NavLink>
+                  <NavLink exact activeClassName="active" to='/signup'>Sign Up</NavLink>
+                  <NavLink exact activeClassName="active" to='/login'>Log In</NavLink>
+                  <NavLink exact activeClassName="active" to='/todos'>Tasks</NavLink>
+                  {this.state.token && <button onClick={this.logout}>Log Out</button>}
+                  </header>
+
+                  JENGINS 
+
+                    <Switch>
+                        <Route 
+                            path="/" 
+                            exact
+                            render={(routerProps) => <Home{...routerProps} />} 
+                        />
+                        <Route 
+                            path="/login" 
+                            exact
+                            render={(routerProps) => <LogIn {...routerProps} />} 
+                        />
+                        <Route 
+                          path="/signup" 
+                          exact
+                          render={(routerProps) => <SignUp {...routerProps} />} 
+                        />
+                         <Route 
+                          path="/todo" 
+                          exact
+                          render={(routerProps) => 
+                          this.state.token ?
+                          <ToDo token={this.state.token} {...routerProps} /> :
+                          <Redirect to="/signup" />} />
+                    </Switch>
+                </Router>
+            </div>
+        )
+    }
 }
-
-export default App;
