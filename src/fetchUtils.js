@@ -28,7 +28,7 @@ export async function createTodo(todo, token){
 }
 
 // Login
-export async function login(email, password){
+export async function newLogIn(email, password){
     const response = await request 
     .post (`${URL}auth/signin`)
     .send ({ email, password })
