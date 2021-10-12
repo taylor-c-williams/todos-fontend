@@ -30,15 +30,15 @@ export async function createTodo(todo, token){
 // Login
 export async function login(email, password){
     const response = await request 
-    .post (`${URL}/auth/signin`)
+    .post (`${URL}auth/signin`)
     .send ({ email, password })
     return response.body;
 }
 
 // Sign Up
-export async function signUp(email, password){
+export async function newSignUp(email, password){
     const response = await request 
-    .post (`${URL}/auth/signup`)
+    .post (`${URL}auth/signup`)
     .send ({ email, password })
     return response.body;
 }

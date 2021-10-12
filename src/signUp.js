@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { signUp } from './fetchUtils';
+import { newSignUp } from './fetchUtils';
 
 export default class signUp extends Component {
 
@@ -11,7 +11,7 @@ export default class signUp extends Component {
 
     handleSubmit = async e => {
         e.preventDefault();
-        const { token } = await signUp(this.state.email, this.state.password);
+        const { token } = await newSignUp(this.state.email, this.state.password);
         this.props.handleTokenChange(token);
         this.props.history.push('/todos');
     }
