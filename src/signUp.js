@@ -13,7 +13,7 @@ export default class signUp extends Component {
         e.preventDefault();
         const { token } = await newSignUp(this.state.email, this.state.password);
         this.props.handleTokenChange(token);
-        this.props.history.push('/todos');
+        this.props.history.push('/todo');
     }
 
     render() {

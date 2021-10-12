@@ -10,8 +10,8 @@ export default class logIn extends Component {
 
 	handleSubmit = async (e) => {
 		e.preventDefault();
-		const { token } = await newLogIn(this.state.email, this.state.password);
-		this.props.history.push("/todos");
+        await newLogIn(this.state.email, this.state.password);
+		this.props.history.push("/todo");
 	};
 
 	render() {

@@ -32,6 +32,7 @@ export default class App extends Component {
   }
 
     render() {
+      console.log(this.state)
         return (
             <div>
                 <Router>
@@ -39,7 +40,7 @@ export default class App extends Component {
                   <NavLink exact activeClassName="active" to='/'>Home</NavLink>
                   <NavLink exact activeClassName="active" to='/signup'>Sign Up</NavLink>
                   <NavLink exact activeClassName="active" to='/login'>Log In</NavLink>
-                  <NavLink exact activeClassName="active" to='/todos'>Tasks</NavLink>
+                  <NavLink exact activeClassName="active" to='/todo'>Tasks</NavLink>
                   {this.state.token && <button onClick={this.logout}>Log Out</button>}
                   </header>
 
