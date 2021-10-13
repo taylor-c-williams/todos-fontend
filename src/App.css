@@ -22,32 +22,48 @@ header {
 
 form {
   background-color: #d8e2dc;
-  color:white;
+  color:black;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 1px dashed white;
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
+  margin: 10px;
 }
 
 input {
   border: 1px dashed white;
   border-bottom: 1px dashed black;
   font-family: 'DM Mono', monospace;
+  font-size: 1em;
   font-style: italic;
+  padding:10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
-  background-color: d8e2dc;
   font-family: 'DM Mono', monospace;
+  font-size: 1em;
   border: 1px dashed white;
   border-bottom: 1px dashed black;
+  border-radius: 5px;
   cursor: pointer;
   margin:5px;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: #f8edeb;
 }
 
 .logout {
   border: none;
   font-family: 'urbanist', sans-serif;
-  background-color: var(--fulvous);
+  background-color: #f8edeb;
   color:white;
 
 }
@@ -63,10 +79,12 @@ a:hover {
 }
 
 .active {
-  background-color:var(--rifle-green);
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
+  background-color:#fae1dd ;
   border-radius:  5px;
-  color:white;
+  color:grey;
   padding:10px;
+  border-bottom: 1px dashed grey;
 }
 
 label {
@@ -87,6 +105,7 @@ label {
   padding: 50px;
   margin: 10px;
   cursor: pointer;
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
   transition: all .2s ease-in-out;
   border: 1px dashed white;
   border-bottom: 1px dashed black;
