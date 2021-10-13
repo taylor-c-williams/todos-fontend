@@ -43,3 +43,10 @@ export async function newSignUp(email, password){
     return response.body;
 }
 
+// Delete Task
+export async function deleteTodo(id, token) {
+	const response = await request.delete(`${URL}api/todos/${id}`)
+    .set('Authorization', token)
+	return response.body;
+}
+

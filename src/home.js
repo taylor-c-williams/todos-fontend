@@ -4,7 +4,7 @@ export default class home extends Component {
     render() {
         return (
             <div>
-               ZONGO
+              <h1>DO STUFF</h1>
             </div>
         )
     }
