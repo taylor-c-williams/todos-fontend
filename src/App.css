@@ -1,13 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 
-body, html, #root, .container {
-  --jet: #343330ff;
-  --rifle-green: #45462aff;
-  --brown: #7e5920ff;
-  --fulvous: #dc851fff;
-  --yellow-orange: #ffa737ff;
-  background-color: var(--fulvous)
+body {
+  background-image: url('https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+ background-repeat: no-repeat;
+ --light-gray: hsla(184, 19%, 83%, 1);
+ --cultured: hsla(220, 14%, 96%, .5);
+ --cadet-blue-crayola: hsla(203, 13%, 69%, 1);
+ --beau-blue: hsla(201, 33%, 83%, .5);
+ --silver-sand: hsla(203, 17%, 75%, 1);
+}
+
+h1 {
+  font-family: 'Modak', sans-serif;
+  font-size: 10em;
+  color:white;
+  font-weight: 100;
+  margin-bottom: -20px;
 }
 
 .container {
@@ -25,47 +35,69 @@ header {
 }
 
 form {
-  background-color: var(--rifle-green);
-  color:white;
+  background-color: var(--beau-blue);
+  color:black;
   padding: 10px;
-  border-radius: 15px;
+  border-radius: 5px;
   border: 1px dashed white;
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
+  margin: 10px;
 }
 
 input {
   border: 1px dashed white;
   border-bottom: 1px dashed black;
   font-family: 'DM Mono', monospace;
+  font-size: 1em;
   font-style: italic;
+  padding:10px;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+input:focus {
+  outline: none;
 }
 
 button {
-  background-color: white;
   font-family: 'DM Mono', monospace;
+  font-size: 1em;
   border: 1px dashed white;
   border-bottom: 1px dashed black;
+  border-radius: 5px;
   cursor: pointer;
   margin:5px;
+  padding: 5px;
+}
+
+button:hover {
+  background-color: #f8edeb;
 }
 
 .logout {
   border: none;
   font-family: 'urbanist', sans-serif;
-  background-color: var(--fulvous);
+  background-color: #f8edeb;
   color:white;
-
 }
 
 a {
   margin: 15px;
   text-decoration: none;
+  color:black;
+}
+
+a:hover {
+  color:white;
 }
 
 .active {
-  background-color:var(--rifle-green);
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
+  background-color:	rgba(248, 237, 235, );
   border-radius:  5px;
-  color:white;
+  color:grey;
   padding:10px;
+  border-bottom: 1px dashed grey;
 }
 
 label {
@@ -83,24 +115,29 @@ label {
 .todo {
   border-radius: 5px;
   text-align: center;
-  padding: 10px;
+  padding: 50px;
   margin: 10px;
   cursor: pointer;
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .1);
   transition: all .2s ease-in-out;
   border: 1px dashed white;
+  border-bottom: 1px dashed black;
+  font-size:2em;
+  font-family: 'DM Mono', monospace;
 }
 
 .todo:hover {
-  background-color: white;
+  background-color: rgba(216, 226, 220, .5);
   color: black;
 }
 
 .completed {
-  background-color: steelblue;
+  background-color: rgba(174, 174, 174, 0.4);
+  color:white;
   text-decoration: line-through;
 }
 
 .incomplete {
-  color: white;
-  background-color: var(--yellow-orange);
+  color: grey;
+  background-color: var(--cultured);
 }

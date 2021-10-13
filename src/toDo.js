@@ -5,13 +5,12 @@ export default class toDo extends Component {
 	state = {
 		todos: [],
 		todoName: "",
-        isLoading: true
+		isLoading: true,
 	};
 
 	componentDidMount = async () => {
 		const todos = await getTodos(this.props.token);
-		this.setState({ todos,
-                        isLoading: false });
+		this.setState({ todos, isLoading: false });
 	};
 
 	handleSubmit = async (e) => {
@@ -23,31 +22,27 @@ export default class toDo extends Component {
 		this.setState({ todos, todoName: "" });
 	};
 
-
-    // handleDelete = async (e) => {
-    //     e.preventDefault();
-    //     await deleteTodo(todos.id, this.props.token)
-    // }
-
 	render() {
+		const { todoName, todos } = this.state;
+		const { token } = this.props;
 		return (
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<input
-						value={this.state.todoName}
+						value={todoName}
 						onChange={(e) => this.setState({ todoName: e.target.value })}
 					/>
 					<button>Add Task</button>
 				</form>
 				<div>
-					{this.state.todos
+					{todos
 						.sort((a, b) => a.completed - b.completed)
 						.map((todo) => (
 							<div
 								key={`${todo.id}`}
 								onClick={async () => {
-									await updateTodo(todo.id, !todo.completed, this.props.token);
-									const todos = await getTodos(this.props.token);
+									await updateTodo(todo.id, !todo.completed, token);
+									const todos = await getTodos(token);
 									this.setState({ todos });
 								}}
 								className={
@@ -55,7 +50,6 @@ export default class toDo extends Component {
 								}
 							>
 								{todo.todo}
-                                {/* <button type = "button" onClick = {this.handleDelete}>Delete Task</button> */}
 							</div>
 						))}
 				</div>
