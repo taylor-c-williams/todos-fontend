@@ -31,6 +31,7 @@ export default class toDo extends Component {
 					<input
 						value={todoName}
 						onChange={(e) => this.setState({ todoName: e.target.value })}
+						required
 					/>
 					<button>Add Task</button>
 				</form>
