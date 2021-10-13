@@ -1,17 +1,16 @@
 import React, { Component } from "react";
-import { newLogIn } from './fetchUtils.js';
+import { newLogIn } from "./fetchUtils.js";
 
 export default class logIn extends Component {
-
-    state = {
-        password: '',
-        email: '',
-    }
+	state = {
+		password: "",
+		email: "",
+	};
 
 	handleSubmit = async (e) => {
 		e.preventDefault();
-        const { token } =  await newLogIn(this.state.email, this.state.password);
-        this.props.handleTokenChange (token);
+		const { token } = await newLogIn(this.state.email, this.state.password);
+		this.props.handleTokenChange(token);
 		this.props.history.push("/todo");
 	};
 
@@ -20,12 +19,12 @@ export default class logIn extends Component {
 			<div>
 				<form onSubmit={this.handleSubmit}>
 					<label>
-					<p>	Email Address:</p>
+						<p> Email Address:</p>
 						<input
 							value={this.state.email}
 							onChange={(e) => this.setState({ email: e.target.value })}
 							type="email"
-                            required
+							required
 						/>
 					</label>
 					<label>
@@ -34,7 +33,7 @@ export default class logIn extends Component {
 							value={this.state.password}
 							onChange={(e) => this.setState({ password: e.target.value })}
 							type="password"
-                            required
+							required
 						/>
 					</label>
 					<button>Log In!</button>

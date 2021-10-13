@@ -1,9 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&display=swap');
 
-body, html, #root, .container {
+body {
+  background-image: url('https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+ background-repeat: no-repeat;
+ --light-gray: hsla(184, 19%, 83%, 1);
+ --cultured: hsla(220, 14%, 96%, .5);
+ --cadet-blue-crayola: hsla(203, 13%, 69%, 1);
+ --beau-blue: hsla(201, 33%, 83%, .5);
+ --silver-sand: hsla(203, 17%, 75%, 1);
+}
 
-  background-color: #F8EDEB;
+h1 {
+  font-family: 'Modak', sans-serif;
+  font-size: 10em;
+  color:white;
+  font-weight: 100;
+  margin-bottom: -20px;
 }
 
 .container {
@@ -21,7 +35,7 @@ header {
 }
 
 form {
-  background-color: #d8e2dc;
+  background-color: var(--beau-blue);
   color:black;
   padding: 10px;
   border-radius: 5px;
@@ -65,7 +79,6 @@ button:hover {
   font-family: 'urbanist', sans-serif;
   background-color: #f8edeb;
   color:white;
-
 }
 
 a {
@@ -80,7 +93,7 @@ a:hover {
 
 .active {
   box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
-  background-color:#fae1dd ;
+  background-color:	rgba(248, 237, 235, );
   border-radius:  5px;
   color:grey;
   padding:10px;
@@ -105,7 +118,7 @@ label {
   padding: 50px;
   margin: 10px;
   cursor: pointer;
-  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .2);
+  box-shadow: -5px 5px 0px 0px rgba(0, 0, 255, .1);
   transition: all .2s ease-in-out;
   border: 1px dashed white;
   border-bottom: 1px dashed black;
@@ -114,17 +127,17 @@ label {
 }
 
 .todo:hover {
-  background-color: #d8e2dc;
+  background-color: rgba(216, 226, 220, .5);
   color: black;
 }
 
 .completed {
-  background-color: #ffe5d9;
+  background-color: rgba(174, 174, 174, 0.4);
   color:white;
   text-decoration: line-through;
 }
 
 .incomplete {
   color: grey;
-  background-color: #ece4db;
+  background-color: var(--cultured);
 }

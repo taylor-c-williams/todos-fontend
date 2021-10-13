@@ -49,4 +49,3 @@ export async function deleteTodo(id, token) {
     .set('Authorization', token)
 	return response.body;
 }
-
