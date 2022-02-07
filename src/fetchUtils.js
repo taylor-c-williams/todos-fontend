@@ -18,7 +18,7 @@ export async function updateTodo(id, completed, token){
     return response.body;
 }
 
-// Create To'Do
+// Create To-Do
 export async function createTodo(todo, token){
     const response = await request 
     .post (`${URL}api/todos/`)
@@ -49,3 +49,4 @@ export async function deleteTodo(id, token) {
     .set('Authorization', token)
 	return response.body;
 }
+
